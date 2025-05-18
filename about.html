@@ -3,35 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="About Amanda Wartick – background, values, and personal story">
+  <meta name="description" content="About Amanda Wartick – Background, Approach, and Values">
   <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
   <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="all.css">
   <script src="all.js" defer></script>
   <script src="include.js" defer></script>
   <title>About – Amanda Wartick</title>
-  <style>
-    .about-section {
-      display: grid;
-      grid-template-columns: 250px 1fr;
-      gap: 2rem;
-      align-items: start;
-      margin-bottom: 3rem;
-    }
-    .about-section img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 0.5rem;
-    }
-    .about-section h2 {
-      margin-top: 0;
-    }
-    @media (max-width: 700px) {
-      .about-section {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
 </head>
 <body>
   <header></header>
@@ -40,37 +18,69 @@
     <section class="container">
       <h1>About Me</h1>
 
-      <div class="about-section">
+      <div class="about-grid">
         <img src="img/headshot.jpeg" alt="Amanda Wartick headshot">
         <div>
           <h2>Hello, World</h2>
-          <p>I was born in the Philippines and raised in a cross-cultural household shaped by Puerto Rican, Filipinx, and Midwestern (via Wisconsin) influences. That upbringing taught me how to navigate complexity, listen deeply, and find common ground—skills that continue to guide my work in tech and systems design.</p>
-          <p>I spent over 15 years leading strategy and operations at Microsoft and AWS, where I built programs, aligned teams, and solved problems at scale. Along the way, I earned a degree in Integrated Social Sciences from the University of Washington where I explored systems, equity, and the social dimensions of technology.</p>
-          <p>Today, I’m continuing that work through a focus on cybersecurity, accessibility, and ethical design—building systems that are not only technically sound, but human-centered and built to last.</p>
+          <p>
+            I was born in the Philippines and raised in a cross-cultural household shaped by Puerto Rican, Filipinx, and Midwestern (via Wisconsin) influences. That upbringing taught me how to navigate complexity, listen deeply, and find common ground—skills that continue to guide my work in tech and systems design.
+          </p>
+          <p>
+            I spent over 15 years leading strategy and operations at Microsoft and AWS, where I built programs, aligned teams, and solved problems at scale. Along the way, I earned a degree in Integrated Social Sciences from the University of Washington where I explored systems, equity, and the social dimensions of technology.
+          </p>
+          <p>
+            Today, I’m continuing that work through a focus on cybersecurity, accessibility, and ethical design—building systems that are not only technically sound, but human-centered and built to last.
+          </p>
         </div>
       </div>
 
-      <div class="about-section">
-        <img src="img/ASI Booth.jpeg" alt="Amanda at ASI Booth">
+      <div class="about-grid">
+        <img src="img/ASI Booth.jpeg" alt="ASI Booth presentation">
         <div>
           <h2>Future State</h2>
-          <p>I'm currently studying Information Technology with a focus on cybersecurity and information assurance. My coursework spans systems analysis, C#, Java, networking, and technical writing, along with hands-on work in cybersecurity tools and practices. I’m especially interested in the intersection of secure system design, compliance frameworks, and user-centered thinking. With experience in strategy, program delivery, and compliance at Microsoft and AWS, I'm now building the technical foundation to protect systems—and the people who rely on them. My goal is to work in roles where security, ethics, and accessibility all matter.</p>
+          <p>
+            I'm currently studying Information Technology with a focus on cybersecurity and information assurance. My coursework spans systems analysis, C#, Java, networking, and technical writing, along with hands-on work in cybersecurity tools and practices. I'm especially interested in the intersection of secure system design, compliance frameworks, and user-centered thinking. With experience in strategy, program delivery, and compliance at Microsoft and AWS, I'm now building the technical foundation to protect systems—and the people who rely on them. My goal is to work in roles where security, ethics, and accessibility all matter.
+          </p>
         </div>
       </div>
 
-      <div class="about-section">
-        <img src="img/Mango.jpeg" alt="Amanda with her dog Mango">
+      <div class="about-grid">
+        <img src="img/Mango.jpeg" alt="Amanda and her dog Mango">
         <div>
           <h2>AFK (Away From Keyboard)</h2>
-          <p>Outside of work and school, I enjoy hiking, cooking, and getting lost in horror and sci-fi—books, films, podcasts, and everything in between. I spend most of my time with my partner, Jenna, and our dog, Mango, who’s full of puppy energy and keeps us active. Mango is our daily adventure guide and neighborhood icebreaker, always making new friends wherever we go. Those quiet, shared moments and spontaneous connections help keep me grounded.</p>
-          <p>That’s a little about me; I’d love to hear from you!<br>
-          If you’d like to connect or collaborate, feel free to send me a message on <a href="https://www.linkedin.com/in/amandawartick/" target="_blank" rel="nofollow noopener noreferrer">LinkedIn</a>.</p>
+          <p>
+            Outside of work and school, I enjoy hiking, cooking, and getting lost in horror and sci-fi—books, films, podcasts, and everything in between. I spend most of my time with my partner, Jenna, and our dog, Mango, who’s full of puppy energy and keeps us active. Mango is our daily adventure guide and neighborhood icebreaker, always making new friends wherever we go. Those quiet, shared moments and spontaneous connections help keep me grounded.
+          </p>
+          <p>
+            That’s a little about me; I’d love to hear from you!<br>
+            If you’d like to connect or collaborate, feel free to send me a message on <a href="https://www.linkedin.com/in/amandawartick/" target="_blank" rel="nofollow noopener noreferrer">LinkedIn</a>.
+          </p>
         </div>
       </div>
-
     </section>
   </main>
 
   <footer></footer>
+
+  <style>
+    .about-grid {
+      display: grid;
+      grid-template-columns: 350px 1fr;
+      gap: 2rem;
+      align-items: start;
+      margin-bottom: 4rem;
+    }
+    .about-grid img {
+      width: 100%;
+      max-width: 350px;
+      height: auto;
+      border-radius: 0.5rem;
+    }
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </body>
 </html>
