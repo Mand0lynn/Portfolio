@@ -1,5 +1,5 @@
 /**
- * Core JavaScript functionality for Amanda Wartick's portfolio
+ * Core JavaScript functionality
  * Includes: Scroll management, responsive navigation, and accessibility enhancements
  */
 
