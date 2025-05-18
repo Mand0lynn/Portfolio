@@ -1,1 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Dimples & Dough accessible web design project">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="all.css">
+  <title>Dimples & Dough</title>
+  <style>
+    :root {
+      --font-base: 'Atkinson Hyperlegible Next', sans-serif;
+      --color-text: #1a1a1a;
+      --color-background: #ffffff;
+      --color-accent: #0177b5;
+    }
 
+    body {
+      margin: 0;
+      font-family: var(--font-base);
+      background-color: var(--color-background);
+      color: var(--color-text);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      padding: 1rem;
+      margin: 0 auto;
+    }
+
+    header.site-header, footer.site-footer {
+      background-color: #f5f5f5;
+      padding: 1rem 0;
+    }
+
+    .logo {
+      font-weight: 700;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: var(--color-text);
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      padding: 0;
+      margin: 0;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: var(--color-text);
+    }
+
+    .project-hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 2rem;
+      padding: 2rem 0;
+    }
+
+    .text-block {
+      flex: 1 1 300px;
+    }
+
+    .image-block {
+      flex: 1 1 300px;
+      text-align: center;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    h1, h2, h3, h4 {
+      line-height: 1.2;
+    }
+
+    @media (max-width: 768px) {
+      .project-hero {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo">Amanda Wartick</a>
+      <nav class="nav">
+        <ul class="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="resume.html">Resume</a></li>
+          <li><a href="about.html">About</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="project-hero container">
+      <div class="text-block">
+        <h1>Dimples & Dough Website</h1>
+        <h3>Bringing a small business to life online with accessible, responsive design.</h3>
+      </div>
+      <div class="image-block">
+        <picture>
+          <source srcset="img/Dimples.webp" type="image/webp">
+          <img src="img/Dimples.png" alt="Dimples">
+        </picture>
+      </div>
+    </section>
+
+    <section class="project-details container">
+      <h2>Project Overview</h2>
+      <p>
+        Dimples & Dough is a small bakery with a growing client base and a need for a digital presence that matched its brand.
+        My team and I worked directly with the owner to design and build a responsive website that highlights products, tells the bakery’s story,
+        and makes it easy for customers to connect. My role spanned layout, accessibility, visual branding, and mobile optimization.
+        The result is a clean, approachable site that sets the stage for future growth.
+      </p>
+
+      <h2>Role</h2>
+      <h4>Lead Technical Program Manager & UX Designer</h4>
+      <ul>
+        <li>Led the design and development of a responsive, mobile-first website tailored to the client’s vision</li>
+        <li>Built the site using HTML, CSS, and accessibility-first layout techniques</li>
+        <li>Created a visual brand identity through color, typography, and layout choices</li>
+        <li>Worked closely with the client to clarify goals, refine content, and ensure usability</li>
+        <li>Integrated calls to action and navigation patterns that support future business growth</li>
+      </ul>
+
+      <h2>Technology Used</h2>
+      <ul>
+        <li>HTML, CSS, JavaScript</li>
+        <li>Responsive Web Design</li>
+        <li>WCAG accessibility standards</li>
+        <li>Figma (wireframing & UX)</li>
+        <li>Asana (project tracking)</li>
+        <li>GitHub Pages (hosting)</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>© Amanda Wartick | <a href="https://www.linkedin.com/in/amandawartick/" target="_blank" rel="noopener">LinkedIn</a></p>
+    </div>
+  </footer>
+</body>
+</html>
