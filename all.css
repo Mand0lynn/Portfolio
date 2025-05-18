@@ -259,3 +259,79 @@ footer {
     font-size: 1.8rem;
   }
 }
+/* ===== Scroll to Top Button ===== */
+.scroll-to-top {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-purple);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 100;
+}
+
+.scroll-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ===== Mobile Menu Toggle ===== */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  padding: 0.5rem;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+  
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 80%;
+    max-width: 300px;
+    height: 100vh;
+    background-color: var(--color-background);
+    flex-direction: column;
+    padding: 2rem;
+    transition: right 0.3s ease;
+    z-index: 90;
+    box-shadow: -2px 0 10px rgba(0,0,0,0.1);
+  }
+  
+  .nav-links.open {
+    right: 0;
+  }
+}
+
+/* ===== Lazy Loading States ===== */
+.project-card {
+  position: relative;
+}
+
+.project-card img {
+  transition: opacity 0.3s ease;
+}
+
+.project-card img[loading="lazy"] {
+  opacity: 0;
+}
+
+.project-card.loaded img {
+  opacity: 1;
+}
