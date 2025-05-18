@@ -137,88 +137,48 @@ p {
   position: sticky;
   top: 0;
   z-index: 100;
+  margin-bottom: var(--space-xl); /* Keep space below header */
 }
 
-.header-container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-wrap: nowrap;
-  gap: var(--space-md);
-}
-
-.header-logo {
-  flex: 1;
-  min-width: 120px;
-  text-align: left;
-}
-
-.header-nav {
-  flex: 2;
-}
-
-.header-social {
-  flex: 1;
-  min-width: 120px;
-  text-align: right;
-}
-
-.nav-links, .footer-links {
-  list-style: none;
-  display: flex;
-  gap: var(--space-lg);
-  padding: 0;
-  margin: 0;
-}
-
-.nav-links a, .footer-links a {
+/* Update nav links for hover-only effects */
+.nav-links a {
   color: var(--color-text);
   padding: var(--space-xs) 0;
   position: relative;
+  font-weight: 400; /* Regular weight by default */
+  transition: all var(--transition);
 }
 
-.nav-links a:hover, .footer-links a:hover {
-  color: var(--color-accent);
-}
-
-.nav-links a[aria-current="page"] {
-  font-weight: 600;
+/* Hover effects */
+.nav-links a:hover {
   color: var(--color-purple);
+  font-weight: 600; /* Bold on hover */
+}
+
+/* Remove current page indicator styles */
+.nav-links a[aria-current="page"] {
+  font-weight: 400; /* Same as regular links */
+  color: var(--color-text); /* Same as regular links */
 }
 
 .nav-links a[aria-current="page"]::after {
+  display: none; /* Remove underline */
+}
+
+/* Optional: Add underline animation on hover */
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 2px;
   background-color: var(--color-purple);
+  transition: width var(--transition);
 }
 
-/* ========== Button Styles ========== */
-.button {
-  display: inline-block;
-  background-color: var(--color-purple);
-  color: white;
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  transition: all var(--transition);
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-.button:hover {
-  background-color: #3a1d4a;
-  transform: translateY(-2px);
-  color: white;
-}
-
-.button:focus {
-  outline: 2px solid var(--color-purple);
-  outline-offset: 2px;
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 /* ========== Project Grid ========== */
