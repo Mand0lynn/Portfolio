@@ -103,3 +103,11 @@ footer a {
   margin: 0 auto;
   padding: 0 1rem;
 }
+/* ========== About ========== */
+.about-image {
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
