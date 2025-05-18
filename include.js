@@ -28,7 +28,5 @@ document.addEventListener("DOMContentLoaded", () => {
   // Inject header and footer
   inject("header", "header.html");
   inject("footer", "footer.html");
-  
-  // Optional: Load other common elements
-  // inject("#newsletter", "components/newsletter.html");
+ 
 });
