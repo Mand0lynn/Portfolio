@@ -1,32 +1,29 @@
-<header style="background-color: #fff; padding: 1rem 0; border-bottom: 1px solid #eee;">
-  <div class="container" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap;">
-    
+<header class="main-header">
+  <div class="container header-container">
     <!-- Left: Name -->
-    <div style="flex: 1; text-align: left; min-width: 120px;">
-      <a href="index.html" class="logo" style="font-weight: 700; font-size: 1.1rem; text-decoration: none; color: #1a1a1a;">
-        Amanda Wartick
-      </a>
+    <div class="header-logo">
+      <a href="index.html" class="logo">Amanda Wartick</a>
     </div>
 
     <!-- Center: Nav Links -->
-    <nav style="flex: 2; text-align: center;">
-      <ul class="nav-links" style="list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 2rem;">
-        <li><a href="index.html" style="text-decoration: none; color: #1a1a1a;">Home</a></li>
-        <li><a href="projects.html" style="text-decoration: none; color: #1a1a1a;">Projects</a></li>
-        <li><a href="resume.html" style="text-decoration: none; color: #1a1a1a;">Resume</a></li>
-        <li><a href="about.html" style="text-decoration: none; color: #1a1a1a;">About</a></li>
+    <nav class="header-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" aria-current="page">Projects</a></li>
+        <li><a href="resume.html">Resume</a></li>
+        <li><a href="about.html">About</a></li>
       </ul>
     </nav>
 
     <!-- Right: LinkedIn Icon -->
-    <div style="flex: 1; text-align: right; min-width: 120px;">
+    <div class="header-social">
       <a href="https://www.linkedin.com/in/amandawartick/"
          target="_blank"
          rel="nofollow noopener noreferrer"
-         aria-label="LinkedIn">
-        <img src="img/LinkedIn_icon.svg" alt="LinkedIn" width="20" height="20">
+         aria-label="LinkedIn"
+         class="linkedin-link">
+        <img src="img/LinkedIn_icon.svg" alt="LinkedIn" width="20" height="20" loading="lazy">
       </a>
     </div>
-
   </div>
 </header>
