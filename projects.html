@@ -10,6 +10,47 @@
   <script src="all.js" defer></script>
   <script src="include.js" defer></script>
   <title>Projects – Amanda Wartick</title>
+  <style>
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .project-card {
+      background-color: #fff;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+      text-align: center;
+    }
+    .project-card img {
+      max-width: 100%;
+      max-height: 350px;
+      width: auto;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+    .project-card h3 {
+      margin-top: 0.5rem;
+      font-size: 1.25rem;
+      color: #1a1a1a;
+    }
+    .project-card p {
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 1.25rem;
+    }
+    .project-card .button {
+      display: inline-block;
+      background-color: #4f2e5e;
+      color: #fff;
+      text-decoration: none;
+      padding: 0.5rem 1.25rem;
+      border-radius: 0.5rem;
+      font-size: 0.95rem;
+    }
+  </style>
 </head>
 <body>
   <header></header>
@@ -24,7 +65,6 @@
       </p>
 
       <div class="project-grid">
-        <!-- Project 1 -->
         <div class="project-card">
           <img src="img/Harvest PC Logo.svg" alt="Harvest Pierce County Logo">
           <h3>Gleaning Project Website Redesign</h3>
@@ -32,7 +72,6 @@
           <a href="gleaning.html" class="button">Learn More</a>
         </div>
 
-        <!-- Project 2 -->
         <div class="project-card">
           <img src="img/USAFLogo.svg" alt="USAF Logo">
           <h3>USAF SharePoint Permissions</h3>
@@ -40,7 +79,6 @@
           <a href="sharepoint.html" class="button">Learn More</a>
         </div>
 
-        <!-- Project 3 -->
         <div class="project-card">
           <img src="img/Dimples.png" alt="Dimples and Dough Logo">
           <h3>Dimples & Dough Website</h3>
@@ -48,7 +86,6 @@
           <a href="dimples.html" class="button">Learn More</a>
         </div>
 
-        <!-- Project 4 -->
         <div class="project-card">
           <img src="img/ELAPrototype.png" alt="ELA Prototype Glasses">
           <h3>Education Assistive Smart Glasses</h3>
