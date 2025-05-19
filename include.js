@@ -1,32 +1,34 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const inject = async (selector, file) => {
-    const element = document.querySelector(selector);
-    if (!element) {
-      console.warn(`Element ${selector} not found for inclusion`);
-      return;
-    }
+// Load header and footer into all pages
+document.addEventListener('DOMContentLoaded', function() {
+  // Inject header
+  fetch('header.html')
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('afterbegin', data);
+    });
 
-    try {
-      const response = await fetch(file);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const html = await response.text();
-      
-      // Create temporary container
-      const temp = document.createElement('div');
-      temp.innerHTML = html;
-      
-      // Inject while preserving any existing event listeners
-      element.replaceWith(...temp.childNodes);
-      
-      console.log(`Included ${file} successfully`);
-    } catch (error) {
-      console.error(`Include failed for ${file}:`, error);
-      element.innerHTML = `<!-- Error loading ${file} -->`;
-    }
-  };
-
-  // Inject header and footer
-  inject("header", "header.html");
-  inject("footer", "footer.html");
- 
+  // Inject footer
+  fetch('footer.html')
+    .then(response => response.text())
+    .then(data => {
+      document.body.insertAdjacentHTML('beforeend', data);
+    })
+    .then(() => {
+      // Initialize scripts after injection
+      initMobileMenu();
+      secureExternalLinks();
+    });
 });
+
+// Secure all external links
+function secureExternalLinks() {
+  document.querySelectorAll('a[href^="http"]').forEach(link => {
+    if (link.hostname !== window.location.hostname) {
+      link.setAttribute('rel', 'noopener noreferrer');
+      link.setAttribute('target', '_blank');
+      if (!link.hasAttribute('aria-label')) {
+        link.setAttribute('aria-label', `${link.textContent} (opens in new tab)`);
+      }
+    }
+  });
+}
