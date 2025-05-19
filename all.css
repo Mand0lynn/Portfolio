@@ -383,9 +383,14 @@ p {
   font-size: var(--text-lg);
 }
 
-.hero-text p em {
-  font-style: normal;
-  color: var(--color-text);
+.hero-text p:last-of-type {
+  margin-top: var(--space-xl);
+  font-size: var(--text-base);
+}
+
+.hero-text a {
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
 }
 
 /* ========== About Page Styles ========== */
