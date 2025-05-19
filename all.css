@@ -108,3 +108,57 @@ a[target="_blank"]::after {
 .cta-button:hover {
   background: var(--color-primary);
 }
+/* About Page Styles */
+.about-page {
+  padding-top: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  padding: 2rem 0;
+}
+
+.about-section {
+  padding: 3rem 0;
+}
+
+.about-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: center;
+}
+
+@media (min-width: 768px) {
+  .about-grid {
+    grid-template-columns: 1fr 2fr;
+  }
+  
+  .about-grid.reverse {
+    grid-template-columns: 2fr 1fr;
+    direction: rtl;
+  }
+  
+  .about-grid.reverse > * {
+    direction: ltr;
+  }
+}
+
+.about-image {
+  text-align: center;
+}
+
+.about-image img {
+  border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+}
+
+.about-text h2 {
+  margin-bottom: 1.5rem;
+  color: var(--color-primary);
+}
+
+.about-text p {
+  margin-bottom: 1rem;
+  line-height: 1.7;
+}
