@@ -514,7 +514,10 @@ p {
   text-align: center;
   padding: var(--space-xxl) 0;
 }
-
+.project-hero .text-block {
+  max-width: 800px;
+  margin: 0 auto;
+}
 .project-hero p {
   font-size: var(--text-lg);
   line-height: 1.7;
@@ -524,9 +527,11 @@ p {
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
-  margin: var(--space-xxl) 0;
+  grid-template-columns: repeat(2, 1fr); /* exactly 2 columns */
+  gap: var(--space-xxl);
+  justify-content: center; /* center the grid in the container */
+  max-width: 900px; /* optional: prevents excessive stretching */
+  margin: var(--space-xxl) auto;
 }
 
 .project-card {
@@ -657,6 +662,8 @@ p {
   
   .project-grid {
     grid-template-columns: 1fr;
+    max-width: 100%;
+    margin: 0 auto;
   }
 }
 
