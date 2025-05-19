@@ -1,44 +1,66 @@
-/* ========== CSS Variables & Base Styles ========== */
-:root {
-  /* Color Palette */
-  --color-primary: #4f2e5e;
-  --color-secondary: #0177b5;
-  --color-text: #1a1a1a;
-  --color-text-light: #666;
-  --color-bg: #ffffff;
-  --color-bg-light: #FAFAFA;
-  --color-bg-dark: #000000;
-  --color-border: rgba(0, 0, 0, 0.1);
-  --color-white: #ffffff;
-  --color-light-gray: #cccccc;
+/* ========== Base Font Setup ========== */
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('fonts/AtkinsonHyperlegibleNext-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('fonts/AtkinsonHyperlegibleNext-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('fonts/AtkinsonHyperlegibleNext-SemiBold.woff2') format('woff2');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Atkinson Hyperlegible Next';
+  src: url('fonts/AtkinsonHyperlegibleNext-Bold.woff2') format('woff2');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
 
+:root {
+  /* Colors */
+  --color-text: #1a1a1a;
+  --color-background: #ffffff;
+  --color-accent: #0177b5;
+  --color-purple: #4f2e5e;
+  --color-light-gray: #FAFAFA;
+  --color-dark: #000000;
+  --color-light: #cccccc;
+  --color-border: rgba(0, 0, 0, 0.1);
+  
   /* Spacing */
-  --space-xxs: 0.25rem;
-  --space-xs: 0.5rem;
-  --space-sm: 0.75rem;
+  --space-xs: 0.25rem;
+  --space-sm: 0.5rem;
   --space-md: 1rem;
   --space-lg: 1.5rem;
   --space-xl: 2rem;
   --space-xxl: 3rem;
-
+  
   /* Typography */
-  --font-base: 'Atkinson Hyperlegible Next', sans-serif;
-  --text-xs: 0.75rem;
-  --text-sm: 0.875rem;
   --text-base: 1rem;
-  --text-md: 1.125rem;
-  --text-lg: 1.25rem;
-  --text-xl: 1.5rem;
-  --text-xxl: 2rem;
-  --text-xxxl: 3rem;
-
+  --text-sm: 0.875rem;
+  --text-lg: 1.125rem;
+  --text-xl: 1.25rem;
+  --text-xxl: 1.5rem;
+  
   /* Layout */
   --max-width: 1200px;
   --border-radius: 8px;
   --transition: 0.3s ease;
 }
 
-/* ========== Base Reset & Typography ========== */
+/* ========== Base Styles ========== */
 *,
 *::before,
 *::after {
@@ -52,36 +74,12 @@ html {
 }
 
 body {
-  font-family: var(--font-base);
-  line-height: 1.6;
+  margin: 0;
+  font-family: var(--font-base, 'Atkinson Hyperlegible Next'), sans-serif;
+  background-color: var(--color-background);
   color: var(--color-text);
-  background-color: var(--color-bg);
+  line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1.2;
-  margin-bottom: var(--space-md);
-  font-weight: 600;
-}
-
-h1 { font-size: clamp(var(--text-xxl), 5vw, var(--text-xxxl)); }
-h2 { font-size: clamp(var(--text-xl), 4vw, var(--text-xxl)); }
-h3 { font-size: var(--text-lg); }
-h4 { font-size: var(--text-md); }
-
-p {
-  margin-bottom: var(--space-md);
-}
-
-a {
-  color: var(--color-secondary);
-  text-decoration: none;
-  transition: color var(--transition);
-}
-
-a:hover {
-  color: #015a8a;
 }
 
 img {
@@ -90,7 +88,16 @@ img {
   display: block;
 }
 
-/* ========== Layout Components ========== */
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition);
+}
+
+a:hover {
+  color: #015a8a;
+}
+
 .container {
   width: 100%;
   max-width: var(--max-width);
@@ -98,194 +105,264 @@ img {
   padding: 0 var(--space-md);
 }
 
-.section {
-  padding: var(--space-xxl) 0;
+/* ========== Typography ========== */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.2;
+  margin: 0 0 var(--space-md);
+  font-weight: 600;
+  color: var(--color-text);
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 4vw, 2rem);
+}
+
+h3 {
+  font-size: 1.3rem;
+}
+
+p {
+  margin-bottom: var(--space-md);
 }
 
 /* ========== Header Styles ========== */
-.header {
-  background-color: var(--color-white);
+.main-header {
+  background-color: #fff;
   padding: var(--space-md) 0;
+  border-bottom: 1px solid var(--color-border);
   position: sticky;
   top: 0;
   z-index: 100;
-  border-bottom: 1px solid var(--color-border);
+  margin-bottom: var(--space-xl);
 }
 
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-wrap: nowrap;
   gap: var(--space-md);
 }
 
 .header-logo {
+  flex: 1;
+  min-width: 120px;
+}
+
+.header-logo .logo {
+  font-size: var(--text-xl);
   font-weight: 700;
-  font-size: var(--text-lg);
-  color: var(--color-text);
+  color: var(--color-purple);
+  text-decoration: none;
+}
+
+.header-nav {
+  flex: 2;
+  display: flex;
+  justify-content: center;
+}
+
+.header-social {
+  flex: 1;
+  min-width: 120px;
+  text-align: right;
 }
 
 .nav-links {
+  list-style: none;
   display: flex;
   gap: var(--space-lg);
-  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
 .nav-links a {
   color: var(--color-text);
-  padding: var(--space-xs) 0;
+  padding: var(--space-sm) var(--space-xs);
   position: relative;
+  font-weight: 400;
+  transition: all var(--transition);
+  display: inline-block;
 }
 
-.nav-links a[aria-current="page"] {
+.nav-links a:hover,
+.nav-links a:focus {
+  color: var(--color-purple);
   font-weight: 600;
-  color: var(--color-primary);
 }
 
-.nav-links a[aria-current="page"]::after {
+.nav-links a::after {
   content: '';
   position: absolute;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: 0;
   height: 2px;
-  background-color: var(--color-primary);
+  background-color: var(--color-purple);
+  transition: width var(--transition);
 }
 
-/* ========== Button Styles ========== */
-.btn {
-  display: inline-block;
-  padding: var(--space-sm) var(--space-lg);
-  border-radius: var(--border-radius);
-  font-weight: 600;
-  transition: all var(--transition);
-  text-align: center;
-  border: none;
-  cursor: pointer;
-}
-
-.btn-primary {
-  background-color: var(--color-primary);
-  color: var(--color-white);
-}
-
-.btn-primary:hover {
-  background-color: #3a1d4a;
-  transform: translateY(-2px);
-}
-
-/* ========== Card Styles ========== */
-.card {
-  background: var(--color-bg-light);
-  border-radius: var(--border-radius);
-  padding: var(--space-lg);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
-  transition: all var(--transition);
-  border: 1px solid var(--color-border);
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-}
-
-/* ========== Project Grid ========== */
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--space-lg);
-  margin: var(--space-xl) 0;
-}
-
-.project-card img {
-  max-width: 100%;
-  height: 200px;
-  object-fit: contain;
-  margin: 0 auto var(--space-lg);
-}
-
-/* ========== About Page ========== */
-.about-grid {
-  display: grid;
-  grid-template-columns: 350px 1fr;
-  gap: var(--space-xxl);
-  align-items: start;
-}
-
-.about-image {
+.nav-links a:hover::after,
+.nav-links a:focus::after {
   width: 100%;
-  border-radius: var(--border-radius);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
 
-/* ========== Resume Page ========== */
+.nav-links a[aria-current="page"] {
+  font-weight: 400;
+  color: var(--color-text);
+}
+
+.nav-links a[aria-current="page"]::after {
+  display: none;
+}
+
+/* ========== Resume Styles ========== */
+.resume-section {
+  padding: var(--space-xxl) 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-section h1 {
+  font-size: 2.5rem;
+  color: var(--color-purple);
+  margin-bottom: var(--space-xl);
+  text-align: center;
+}
+
+.resume-intro {
+  font-size: var(--text-lg);
+  line-height: 1.7;
+  margin-bottom: var(--space-xxl);
+  text-align: center;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 .resume-grid {
   display: grid;
   grid-template-columns: 200px 1fr;
   gap: var(--space-lg);
 }
 
-.resume-sidebar h2 {
-  position: sticky;
-  top: var(--space-md);
-  border-right: 2px solid var(--color-primary);
+.resume-sidebar {
+  position: relative;
   padding-right: var(--space-md);
 }
 
+.resume-sidebar h2 {
+  font-size: var(--text-xl);
+  color: var(--color-purple);
+  margin-bottom: var(--space-md);
+  position: sticky;
+  top: var(--space-md);
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-purple);
+}
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xxl);
+  padding-bottom: var(--space-xxl);
+}
+
+.resume-item {
+  margin-bottom: var(--space-xl);
+}
+
+.resume-company h3 {
+  font-size: var(--text-xxl);
+  color: var(--color-purple);
+  margin-bottom: var(--space-lg);
+  padding-bottom: var(--space-sm);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.resume-item h4 {
+  font-size: var(--text-lg);
+  margin-bottom: var(--space-xs);
+  font-weight: 600;
+}
+
+.resume-meta {
+  color: var(--color-text-light);
+  font-size: var(--text-sm);
+  margin-bottom: var(--space-md);
+  font-style: italic;
+  display: flex;
+  justify-content: space-between;
+}
+
 .skills-list {
+  list-style: none;
+  padding: 0;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: var(--space-sm);
-  list-style: none;
-  padding: 0;
 }
 
-/* ========== Footer Styles ========== */
-.footer {
-  background-color: var(--color-bg-dark);
-  color: var(--color-light-gray);
-  padding: var(--space-xxl) 0;
-  text-align: center;
+.skills-list li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.5;
+  position: relative;
+  padding-left: var(--space-md);
 }
 
-.footer-links {
-  display: flex;
-  justify-content: center;
-  gap: var(--space-lg);
-  list-style: none;
-  margin: var(--space-md) 0;
+.skills-list li::before {
+  content: "•";
+  color: var(--color-purple);
+  position: absolute;
+  left: 0;
 }
 
-/* ========== Utility Classes ========== */
-.text-center { text-align: center; }
-.mb-sm { margin-bottom: var(--space-sm); }
-.mb-md { margin-bottom: var(--space-md); }
-.mb-lg { margin-bottom: var(--space-lg); }
-.mb-xl { margin-bottom: var(--space-xl); }
+.resume-content ul {
+  padding-left: var(--space-lg);
+  margin: var(--space-sm) 0 var(--space-lg);
+}
 
-/* ========== Responsive Styles ========== */
+.resume-content li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+  position: relative;
+}
+
+/* ========== Responsive Adjustments ========== */
 @media (max-width: 768px) {
+  /* Header */
   .header-container {
     flex-wrap: wrap;
   }
   
+  .header-logo {
+    order: 1;
+    flex: 1;
+    text-align: left;
+  }
+  
+  .header-social {
+    order: 2;
+    flex: 0;
+    text-align: right;
+  }
+  
+  .header-nav {
+    order: 3;
+    flex: 1 0 100%;
+    margin-top: var(--space-md);
+  }
+  
   .nav-links {
-    flex-direction: column;
-    position: fixed;
-    top: 0;
-    right: -100%;
-    width: 80%;
-    height: 100vh;
-    background: var(--color-bg);
-    padding: var(--space-xl);
-    transition: right var(--transition);
+    justify-content: space-around;
+    gap: var(--space-md);
   }
-  
-  .nav-links.open {
-    right: 0;
-  }
-  
-  .about-grid,
+
+  /* Resume */
   .resume-grid {
     grid-template-columns: 1fr;
   }
@@ -293,23 +370,70 @@ img {
   .resume-sidebar h2 {
     position: static;
     border-right: none;
-    border-bottom: 2px solid var(--color-primary);
+    border-bottom: 2px solid var(--color-purple);
     padding-bottom: var(--space-sm);
+  }
+  
+  .resume-content {
+    gap: var(--space-xl);
+  }
+  
+  .skills-list {
+    grid-template-columns: 1fr;
+  }
+  
+  .resume-meta {
+    flex-direction: column;
+    gap: var(--space-xs);
   }
 }
 
+@media (max-width: 480px) {
+  .header-logo .logo {
+    font-size: var(--text-lg);
+  }
+  
+  .nav-links {
+    gap: var(--space-sm);
+  }
+  
+  .nav-links a {
+    font-size: var(--text-sm);
+  }
+}
+
+/* ========== Print Styles ========== */
 @media print {
-  .header,
-  .footer {
+  .main-header {
     display: none;
   }
   
-  body {
-    font-size: 12pt;
+  .resume-section {
+    padding: 0;
   }
   
-  .container {
-    padding: 0;
-    max-width: 100%;
+  .resume-section h1 {
+    font-size: 24pt;
+  }
+  
+  .resume-intro {
+    font-size: 11pt;
+  }
+  
+  .resume-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .resume-sidebar h2 {
+    break-inside: avoid;
+  }
+  
+  .resume-item {
+    break-inside: avoid;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #000;
   }
 }
