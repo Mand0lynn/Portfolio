@@ -1,47 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Amanda Wartick - Portfolio</title>
-  <meta name="description" content="IT student and cybersecurity professional">
-  <link rel="icon" href="favicon.svg" type="image/svg+xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Amanda Wartick – IT student and ethical technologist">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; img-src 'self'; script-src 'self'; style-src 'self';">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
   <link rel="stylesheet" href="all.css">
+  <script src="all.js" defer></script>
+  <script src="include.js" defer></script>
+  <title>Amanda Wartick – Home</title>
 </head>
 <body>
-  <!-- Header injected via include.js -->
-  
-  <main class="main-content">
-   <section class="hero">
-  <div class="hero-text">
-    <h1>Hi! I'm Amanda</h1>
-    <h2>IT student, systems thinker, and community-minded technologist.</h2>
-    <div class="intro">
-      <p>
-        <em>I'm an Information Technology student transitioning into cybersecurity after 15 years leading strategy and operations in the marketing industry. My work blends systems thinking, user empathy, and secure design to build digital tools that are inclusive, community-driven, and ethically grounded.</em>
-      </p>
-      <p>
-        <em>I'm passionate about creating a safer digital future—especially through accessible solutions that meet real-world needs.</em>
-      </p>
-      <p>
-        <em>If you'd like to connect or collaborate, feel free to send me a message on <a href="https://www.linkedin.com/in/amandawartick/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a>.</em>
-      </p>
-      <div class="cta-links">
-        <a href="./projects/" class="cta-button">Projects</a>
-        <a href="./resume/" class="cta-button">Resume</a>
-        <a href="./about/" class="cta-button">About Me</a>
+  <header></header>
+
+  <main>
+    <section class="intro container">
+      <div class="intro-text">
+        <h1>Hi! I’m Amanda</h1>
+        <h2>IT student, systems thinker, and community-minded technologist.</h2>
+        <p><em>
+          I’m an Information Technology student transitioning into cybersecurity after 15 years
+          leading strategy and operations in the marketing industry. My work blends systems
+          thinking, user empathy, and secure design to build digital tools that are inclusive,
+          community-driven, and ethically grounded.
+        </em></p>
+        <p><em>
+          I’m passionate about creating a safer digital future—especially through accessible
+          solutions that meet real-world needs.
+        </em></p>
+        <p>
+          If you’d like to connect or collaborate, feel free to send me a message on
+          <a href="https://www.linkedin.com/in/amandawartick/" target="_blank" rel="nofollow noopener noreferrer">LinkedIn</a>.
+        </p>
+        <p>
+          <a href="projects.html">Projects</a> |
+          <a href="resume.html">Resume</a> |
+          <a href="about.html">About Me</a>
+        </p>
       </div>
-    </div>
-  </div>
-  <div class="hero-image">
-    <img 
-      class="lazyload" 
-      src="img/lazyload-ph.png" 
-      data-src="img/Cyber-Globe.svg" 
-      alt="Globe icon with cybersecurity symbols" 
-      width="364" 
-      height="364"
-      loading="lazy"
-    >
-  </div>
-</section>
+      <div class="intro-image">
+        <img src="img/Cyber-Globe.svg" alt="Cyber Globe" width="500" height="500">
+      </div>
+    </section>
+  </main>
+
+  <footer></footer>
+</body>
+</html>
