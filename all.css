@@ -162,3 +162,67 @@ a[target="_blank"]::after {
   margin-bottom: 1rem;
   line-height: 1.7;
 }
+/* Projects Page Styles */
+.projects-page {
+  padding: 2rem 0;
+}
+
+.page-intro {
+  text-align: center;
+  padding: 2rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.project-grid {
+  display: grid;
+  gap: 2rem;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .project-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.project-card {
+  background: var(--color-bg-secondary);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-image {
+  padding: 1rem;
+  text-align: center;
+  background: white;
+}
+
+.project-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+.project-content {
+  padding: 1.5rem;
+}
+
+.project-content h2 {
+  margin-top: 0;
+  color: var(--color-primary);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
+  margin-top: 1rem;
+}
