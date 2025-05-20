@@ -372,6 +372,115 @@ p {
 .resume-content strong {
   font-weight: 600;
 }
+/* ========== Resume Grid Layout ========== */
+.resume-section {
+  padding: var(--space-xxl) 0;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.resume-section h1 {
+  font-size: 2.5rem;
+  color: var(--color-purple);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.resume-intro {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  margin: 0 auto var(--space-xl);
+  max-width: 800px;
+  text-align: left;
+}
+
+.resume-grid {
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: var(--space-lg);
+  row-gap: var(--space-xxl);
+}
+
+/* Sidebar Section Titles */
+.resume-sidebar {
+  position: relative;
+  padding-right: var(--space-md);
+}
+
+.resume-sidebar h2 {
+  font-size: var(--text-xl);
+  font-weight: 700;
+  color: var(--color-purple);
+  margin: 0;
+  padding-bottom: var(--space-sm);
+  border-bottom: 2px solid var(--color-purple);
+  border-left: 3px solid var(--color-purple);
+  padding-left: var(--space-sm);
+}
+
+/* Main Content Styling */
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-xl);
+}
+
+/* Each Item Block */
+.resume-item {
+  margin-bottom: var(--space-lg);
+}
+
+.resume-item h3 {
+  font-size: var(--text-lg);
+  font-weight: 600;
+  margin-bottom: var(--space-xs);
+}
+
+.resume-meta {
+  font-size: var(--text-sm);
+  font-style: italic;
+  margin-bottom: var(--space-sm);
+  color: var(--color-text);
+}
+
+/* Strong inside p or li */
+.resume-content strong {
+  font-weight: 600;
+}
+
+/* ========== Skills List ========== */
+.skills-list {
+  list-style: disc;
+  padding-left: var(--space-md);
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: var(--space-sm);
+}
+
+.skills-list li {
+  margin-bottom: var(--space-sm);
+  line-height: 1.6;
+}
+
+/* ========== Responsive ========== */
+@media (max-width: 768px) {
+  .resume-grid {
+    display: block;
+  }
+
+  .resume-sidebar {
+    margin-top: var(--space-xl);
+    border-left: none;
+    padding-left: 0;
+  }
+
+  .resume-sidebar h2 {
+    border-left: none;
+    border-bottom: 2px solid var(--color-purple);
+    padding-left: 0;
+  }
+}
+
 /* ========== Home Page Styles ========== */
 .hero-section {
   padding: var(--space-xxl) 0;
