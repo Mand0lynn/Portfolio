@@ -10,14 +10,10 @@ document.addEventListener("DOMContentLoaded", () => {
       const response = await fetch(file);
       if (!response.ok) throw new Error(`HTTP ${response.status}`);
       const html = await response.text();
-      
-      // Create temporary container
-      const temp = document.createElement('div');
-      temp.innerHTML = html;
-      
-      // Inject while preserving any existing event listeners
-      element.replaceWith(...temp.childNodes);
-      
+
+      // Use innerHTML to retain <header> and <footer> tags
+      element.innerHTML = html;
+
       console.log(`Included ${file} successfully`);
     } catch (error) {
       console.error(`Include failed for ${file}:`, error);
@@ -25,10 +21,6 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   };
 
-  // Inject header and footer
   inject("header", "header.html");
   inject("footer", "footer.html");
-  
-  // Optional: Load other common elements
-  // inject("#newsletter", "components/newsletter.html");
 });
