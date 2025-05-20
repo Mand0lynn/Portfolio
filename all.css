@@ -223,6 +223,26 @@ p {
 .nav-links a[aria-current="page"]::after {
   display: none;
 }
+.project-hero {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-xxl);
+  padding: var(--space-xxl) 0;
+  flex-wrap: wrap;
+}
+
+.project-hero-text {
+  flex: 1;
+  min-width: 280px;
+  max-width: 500px;
+}
+
+.project-hero-img {
+  flex: 1;
+  min-width: 280px;
+  max-width: 400px;
+}
 
 /* ========== Resume Styles ========== */
 .resume-section {
