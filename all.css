@@ -238,7 +238,6 @@ p {
   font-size: var(--text-lg);
   line-height: 1.6;
   margin-bottom: var(--space-xl);
-  text-align: center;
   max-width: 800px;
   margin-left: auto;
   margin-right: auto;
