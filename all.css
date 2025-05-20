@@ -167,9 +167,13 @@ p {
 }
 
 .header-social {
-  flex: 1;
+  flex: 0 0 auto;
   min-width: 120px;
   text-align: right;
+}
+.header-social img {
+  display: inline-block;
+  vertical-align: middle;
 }
 
 .nav-links {
